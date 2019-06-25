@@ -19,6 +19,8 @@ ENV PATH=$NODE_PATH/.bin:$PATH
 
 WORKDIR /app
 
+RUN sed -i "s/host: 'localhost'/host: 'mongodb'/g" config/connections.js
+
 RUN npm install
 
 # Default ymple port
