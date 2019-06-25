@@ -16,7 +16,7 @@ This docker image contains local MongoDB inspired in [mvertes image](https://git
 
 ## 2. Build and run
 
-### 2.1 - Build
+### 2.1. Build
 
 Pull any MongoDB image and create the MongoDB container.
 
@@ -41,7 +41,7 @@ REPOSITORY  TAG    IMAGE ID      REATED         SIZE
 ymple       1.0.0  3c6a5a0ad071  2 minutes ago  90.2MB
 ```
 
-### 2.2 - Run
+### 2.2. Run
 
 Run the YMPLE container using the created image and set host port to be mapped to container
 
@@ -78,6 +78,26 @@ CONTAINER ID  IMAGE                        COMMAND                 CREATED      
 
 ## 3. Use docker-compose to build and run
 
-...
+For preference use `docker-compose` to build and run YMPLE. This will create the network and the MongoDB container.
 
-**TODO** finish readme file
+This is the easy way to get the YMPLE running.
+
+### 3.1. Build
+
+```sh
+docker-compose build
+```
+
+### 3.2. Run
+
+```sh
+docker-compose up -d
+```
+
+## 4. Access
+
+1. To finish intallation access the URL: `http://localhost:1338/install` in yout machine or in your server the host name and the mapped port
+2. Access frontend `http://localhost:1338`
+3. Access backend `http://localhost:1338/admin` using the login `admin@admin.com` and password `admin`
+
+__That's all folks !__
