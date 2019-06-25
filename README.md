@@ -6,7 +6,9 @@ This repository contains a docker file to the [YMPLE Ecommerce](https://www.ympl
 
 Here you can find a Dockerfile to create a container with the latest version of YMPLE Ecommerce project.
 
-This repository contains an extra docker-compose file for run YMPLE container with MongoDB dependence and externals volumes
+This repository contains an extra docker-compose file for run YMPLE container with MongoDB dependence and externals volumes.
+
+This docker image contains local MongoDB inspired in [mvertes image](https://github.com/mvertes/docker-alpine-mongo). Thanks for that! =}
 
 ## 1. Requirements
 
@@ -62,17 +64,7 @@ db4cbcbcd99e        ymple:1.0.0         "docker-entrypoint.s…"   28 seconds ag
 
 **OBS:**
 
-Remember to run a MongoBD container to use it with ymple container. YMPLE uses MongoDB! =}
-
-```shell
-docker ps
-```
-
-```shell
-CONTAINER ID        IMAGE              COMMAND                  CREATED             STATUS              PORTS                      NAMES
-db4cbcbcd99e        ymple:1.0.0        "docker-entrypoint.s…"   6 minutes ago       Up 5 minutes        0.0.0.0:1338->1338/tcp     ymple
-2c730d4a1ce5        mongo              "docker-entrypoint.s…"   9 minutes ago       Up 4 seconds        0.0.0.0:27017->27017/tcp   mongodb
-```
+YMPLE uses MongoDB, I tried to run MongoDB as a YMPLE's container depence but it doesn't work, yet. So I put MongoDB localy in the YMPLE's image. =}
 
 ## 3. Use docker-compose to build and run
 
