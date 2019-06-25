@@ -37,8 +37,8 @@ docker images
 This command will print somwthing like this:
 
 ```shell
-REPOSITORY           TAG                 IMAGE ID            CREATED             SIZE
-ymple                1.0.0               3c6a5a0ad071        2 minutes ago       90.2MB
+REPOSITORY  TAG    IMAGE ID      REATED         SIZE
+ymple       1.0.0  3c6a5a0ad071  2 minutes ago  90.2MB
 ```
 
 ### 2.2 - Run
@@ -58,13 +58,23 @@ docker ps
 This command maybe will print something like this:
 
 ```shell
-CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                    NAMES
-db4cbcbcd99e        ymple:1.0.0         "docker-entrypoint.s…"   28 seconds ago      Up 6 seconds        0.0.0.0:1338->1338/tcp   ymple
+CONTAINER ID  IMAGE        COMMAND                 CREATED         STATUS        PORTS                   NAMES
+db4cbcbcd99e  ymple:1.0.0  "docker-entrypoint.s…"  28 seconds ago  Up 6 seconds  0.0.0.0:1338->1338/tcp  ymple
 ```
 
 **OBS:**
 
-YMPLE uses MongoDB, I tried to run MongoDB as a YMPLE's container depence but it doesn't work, yet. So I put MongoDB localy in the YMPLE's image. =}
+Remember to run a MongoBD container to use it with ymple container. YMPLE uses MongoDB! =}
+
+```shell
+docker ps
+```
+
+```shell
+CONTAINER ID  IMAGE                        COMMAND                 CREATED        STATUS        PORTS                                NAMES
+27f712af99e2  ymple:1.0.0                  "docker-entrypoint.s…"  3 minutes ago  Up 2 minutes  0.0.0.0:1338->1338/tcp               ymple
+324cbdec9407  mvertes/alpine-mongo:latest  "/root/run.sh mongod…"  3 minutes ago  Up 3 minutes  0.0.0.0:27017->27017/tcp, 28017/tcp  mongodb
+```
 
 ## 3. Use docker-compose to build and run
 
